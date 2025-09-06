@@ -9,16 +9,32 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
-# this installs a package from fedora repos
-dnf5 install -y tmux 
-
 # Use a COPR Example:
 #
-# dnf5 -y copr enable ublue-os/staging
-# dnf5 -y install package
+dnf5 -y copr enable errornointernet/quickshell
+dnf5 -y copr enable brycensranch/gpu-screen-recorder-git
+dnf5 -y copr enable yalter/niri
+
+dnf5 -y install quickshell-git \
+  google-roboto-fonts \
+  rsms-inter-fonts \
+  material-icons-fonts \
+  gpu-screen-recorder-ui \
+  brightnessctl \
+  ddcutil \
+  cava \
+  wlsunset \
+  fuzzel \
+  swaylock \
+  waybar \
+  swaybg \
+  mako \
+  swayidle
+
+# Install niri without alacritty
+dnf5 -y install niri --setopt=install_weak_deps=False
+
 # Disable COPRs so they don't end up enabled on the final image:
-# dnf5 -y copr disable ublue-os/staging
-
-#### Example for enabling a System Unit File
-
-systemctl enable podman.socket
+dnf5 -y copr disable errornointernet/quickshell
+dnf5 -y copr disable brycensranch/gpu-screen-recorder-git
+dnf5 -y copr disable yalter/niri
