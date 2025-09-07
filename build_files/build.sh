@@ -15,6 +15,7 @@ dnf5 -y copr enable errornointernet/quickshell
 dnf5 -y copr enable brycensranch/gpu-screen-recorder-git
 dnf5 -y copr enable yalter/niri
 dnf5 -y copr enable wezfurlong/wezterm-nightly
+dnf5 -y copr enable jdxcode/mise
 
 dnf5 -y install quickshell-git \
   google-roboto-fonts \
@@ -31,7 +32,8 @@ dnf5 -y install quickshell-git \
   swaybg \
   mako \
   swayidle \
-  wezterm
+  wezterm \
+  mise
 
 # Install niri without alacritty
 dnf5 -y install niri --setopt=install_weak_deps=False
@@ -41,3 +43,4 @@ dnf5 -y copr disable errornointernet/quickshell
 dnf5 -y copr disable brycensranch/gpu-screen-recorder-git
 dnf5 -y copr disable yalter/niri
 dnf5 -y copr disable wezfurlong/wezterm-nightly
+dnf5 -y copr disable jdxcode/mise
