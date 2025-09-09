@@ -16,6 +16,7 @@ dnf5 -y copr enable brycensranch/gpu-screen-recorder-git
 dnf5 -y copr enable yalter/niri
 dnf5 -y copr enable wezfurlong/wezterm-nightly
 dnf5 -y copr enable jdxcode/mise
+dnf5 -y copr enable ulysg/xwayland-satellite
 
 dnf5 -y install quickshell-git \
   google-roboto-fonts \
@@ -27,13 +28,16 @@ dnf5 -y install quickshell-git \
   cava \
   wlsunset \
   fuzzel \
-  swaylock \
   waybar \
   swaybg \
   mako \
   swayidle \
+  xwayland-satellite \
+  xdg-desktop-portal \
+  xdg-desktop-portal-gnome \
   wezterm \
-  mise
+  mise \
+  NetworkManager-tui
 
 # Install niri without alacritty
 dnf5 -y install niri --setopt=install_weak_deps=False
@@ -44,3 +48,7 @@ dnf5 -y copr disable brycensranch/gpu-screen-recorder-git
 dnf5 -y copr disable yalter/niri
 dnf5 -y copr disable wezfurlong/wezterm-nightly
 dnf5 -y copr disable jdxcode/mise
+dnf5 -y copr disable ulysg/xwayland-satellite
+
+# Set Global Environment Variables
+sed -i '/^TERMINAL=/d' /etc/environment && echo 'TERMINAL=/usr/bin/wezterm' >>/etc/environment
