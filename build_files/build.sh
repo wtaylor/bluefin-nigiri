@@ -18,7 +18,9 @@ dnf5 -y copr enable wezfurlong/wezterm-nightly
 dnf5 -y copr enable jdxcode/mise
 dnf5 -y copr enable ulysg/xwayland-satellite
 
-dnf5 -y install quickshell-git \
+dnf5 -y install \
+  libicu-devel \
+  quickshell-git \
   google-roboto-fonts \
   rsms-inter-fonts \
   material-icons-fonts \
