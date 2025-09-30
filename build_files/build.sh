@@ -39,7 +39,8 @@ dnf5 -y install \
   xdg-desktop-portal-gnome \
   wezterm \
   mise \
-  NetworkManager-tui
+  NetworkManager-tui \
+  libudev-devel # Required for Bevy
 
 # Install niri without alacritty
 dnf5 -y install niri --setopt=install_weak_deps=False
