@@ -40,7 +40,8 @@ dnf5 -y install \
   wezterm \
   mise \
   NetworkManager-tui \
-  libudev-devel # Required for Bevy
+  libudev-devel \
+  btrfs-assistant
 
 # Install niri without alacritty
 dnf5 -y install niri --setopt=install_weak_deps=False
