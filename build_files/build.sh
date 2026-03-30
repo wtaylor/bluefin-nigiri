@@ -41,6 +41,7 @@ dnf5 -y install \
   mise \
   NetworkManager-tui \
   libudev-devel \
+  polkit-kde \
   btrfs-assistant
 
 # Install niri without alacritty
